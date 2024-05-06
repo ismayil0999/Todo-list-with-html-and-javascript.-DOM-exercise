@@ -31,11 +31,15 @@ function addTodo(){
         if (firstTodo) {
             //Əgər output elementi içərisində əvvəlcədən əlavə edilmiş todo varsa yeni todo digərlərinin əvvəlinə əlavə edilir
             output.insertBefore(li, firstTodo);
-            //Todo-larin sayını ekrana yazdırır
-            info.querySelector("p").innerHTML=list.length+1 //Əgər ekranda 5 li elementi varsa 0 indeksi nəzərə aldığı üçün ekrana 4 todo sayı yazılacaq. Bunun üçün  lists.length+1  yazaraq bunu həll edirik
+            //Localstorage outputun deyeri yazilir
+            localStorage.setItem("data",output.innerHTML)
         } else {
             output.appendChild(li);
         }
+
+          //Todo-larin sayını ekrana yazdırır
+          info.querySelector("p").innerHTML=+1 //Əgər ekranda 5 li elementi varsa 0 indeksi nəzərə aldığı üçün ekrana 4 todo sayı yazılacaq. Bunun üçün  lists.length+1  yazaraq bunu həll edirik
+          
         //Todo əlavə edildikdən sonra input dəyəri sıfırlanması üçün
         input.value = "";
         modal.style.display="none"
@@ -79,7 +83,10 @@ function deleteTodo(e){
     let list=document.querySelectorAll("li")
     let output=document.getElementById("output")
     output.removeChild(e.parentElement.parentElement)
-    info.querySelector("p").innerHTML=list.length-1
+    info.querySelector("p").innerHTML=list.length-1;
+
+    //Todo silindikde Localstoragede data deyeri yenilenir
+    localStorage.setItem("data",output.innerHTML)
 }
 
 //X ikonu klik olanda modalın bağlanması üçün
@@ -88,8 +95,16 @@ function closeModal(){
 }
 
 
-//LI elementlərinin sıralana bilməsi üçün funksiya SORTABLE kitabxanasi vasitəsi ilə. Kitabxana CDN link ilə HTML faylına qoşulub
+window.addEventListener("load",function(){
+    //Brauzer refresh olduqda  todo-larin lokaldan getirilmesi ucun
+    let data=localStorage.getItem("data");
+output.innerHTML=data;
+let lists=output.querySelectorAll("li");
+info.querySelector("p").innerHTML=lists.length
+})
+
+/*LI elementlərinin sıralana bilməsi üçün funksiya SORTABLE kitabxanasi vasitəsi ilə. Kitabxana CDN link ilə HTML faylına qoşulub
 let sortableArea=document.getElementById("output")
 new Sortable(sortableArea,{
     animation:350
-})
+})*/
