@@ -39,7 +39,7 @@ function addTodo(){
 
           //Todo-larin sayını ekrana yazdırır
           info.querySelector("p").innerHTML=+1 //Əgər ekranda 5 li elementi varsa 0 indeksi nəzərə aldığı üçün ekrana 4 todo sayı yazılacaq. Bunun üçün  lists.length+1  yazaraq bunu həll edirik
-          
+
         //Todo əlavə edildikdən sonra input dəyəri sıfırlanması üçün
         input.value = "";
         modal.style.display="none"
@@ -91,7 +91,8 @@ function deleteTodo(e){
 
 //X ikonu klik olanda modalın bağlanması üçün
 function closeModal(){
-    modal.style.display="none"
+    modal.style.display="none";
+    input.value=""
 }
 
 

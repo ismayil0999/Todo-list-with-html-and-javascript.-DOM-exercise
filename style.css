@@ -57,7 +57,7 @@ h1,h3{
     width: 90%;
     background: #121212;
     border-radius: 20px;
-    caret-color: rgb(255, 1, 43);
+    caret-color: rgb(255, 255, 255);
     color: #FAFAFA;
     padding-left: 10px;
 }
@@ -92,7 +92,7 @@ flex-shrink: 0;
     background: transparent !important;
 }
 .todo-content-box>input:focus:not(:read-only){
-    color: red !important;
+    color: rgb(107, 107, 107) !important;
 }
 span{
     display: flex;
@@ -100,7 +100,7 @@ span{
     gap: 15px;
 }
 i{
-    color: #f19318;
+    color: #ffd904f5;
 }
 #todos-info{
     margin: 180px 0px 0px 0px;
@@ -126,7 +126,7 @@ i{
     border: 0;
     height: 30px;
 color: white;
-    background: #f19318;
+background: transparent;
     border-radius: 20px;
     font-weight: bold;
     padding: 5px;
@@ -134,6 +134,7 @@ color: white;
     justify-content: center;
     align-items: center;
     width: 120px;
+    border: 1px solid #ffd904f5;
 }
 #todos-info p{
     font-weight: bold;
@@ -159,8 +160,9 @@ color: white;
     justify-content: center;
     gap: 30px;
     padding:50px;
-    background: black;
+    background: #121212;
     border-radius: 20px;
+    border: 1px solid rgb(99, 98, 98);
 }
 #modal input{
     outline: none;
@@ -178,8 +180,8 @@ color: white;
     border: 0;
     width: 100px;
     height: 35px;
-    background: #a202ff;
-    color: white;
+    background: #ffd904f5;
+    color: rgb(0, 0, 0);
     font-weight: bolder;
     border-radius: 10px;
 }
@@ -201,6 +203,9 @@ body{
         padding: 20px;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
+    }
+    #todos-info{
+        border-radius: 0px;
     }
     #modal{
         width: 70%;
