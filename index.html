@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+    <div id="container">
+      <div id="container-header">
+        <h1>Todo</h1>
+        <div id="text-box">
+         <input type="text" placeholder="Search todo" oninput="searchTodo()"  id="search-input">
+ 
+        </input>
+         <button id="add-btn"  >Search</button>
+        </div>
+      </div>
+      <div id="todos-info">
+      <div>
+        <h4>My Todos:</h4>
+        <p>0</p>
+      </div>
+      <div>
+        <button onclick="openTodoInput()">Add new todo</button>
+      </div>
+      </div>
+       <ul id="output">
+      
+
+       </ul>
+    </div>
+    <div id="modal-container">
+      <div id="modal">
+        <i class="fa-solid fa-close close-modal" onclick="closeModal()"></i>
+        <input type="text" id="input" placeholder="Write new todo"></input>
+        <button onclick="addTodo()">Add</button>
+      </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
+<script src="script.js"></script>
+<script>
+</script>
+</html>
